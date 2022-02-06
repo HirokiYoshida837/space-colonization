@@ -39,7 +39,7 @@ export const MySketch4: React.FC = () => {
 
   const setUp = (p5: p5Types, canvasParentRef: Element) => {
     p5.createCanvas(canvasSize.x, canvasSize.y).parent(canvasParentRef);
-    p5.frameRate(10);
+    p5.frameRate(1);
 
     // seed固定
     p5.randomSeed(100);
@@ -54,9 +54,9 @@ export const MySketch4: React.FC = () => {
     }
 
     // nodeの初期位置は自分で指定する。
-    nodes.push(createNode({index: 2002, posX: 250, posY: 250}));
-    nodes.push(createNode({index: 2003, posX: 800, posY: 400}));
-    nodes.push(createNode({index: 2003, posX: 700, posY: 900}));
+    nodes.push(createNode({index: 2002, posX: canvasSize.x/2, posY: canvasSize.y/2}));
+    // nodes.push(createNode({index: 2003, posX: 800, posY: 400}));
+    // nodes.push(createNode({index: 2003, posX: 700, posY: 900}));
   };
 
   const draw = (p5: p5Types) => {
